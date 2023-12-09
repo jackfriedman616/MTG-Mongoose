@@ -3,7 +3,29 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-let Person;
+const root = 'https://s3.amazonaws.com/mybucket';
+
+const cardSchema = new mongoose.Schema({
+  name: String,
+  picture: {
+    type: String,
+    get: v => `${root}${v}`
+  },
+  manaCost: String,
+  manaValue: Number,
+  superType: [String],
+  cardType: [String], //artifact, creature, instant, etc.
+  type: [String], //Human, Arcane, Treasure, Aura, etc.
+  rulesText: String,
+  power: Number,
+  toughness: Number
+});
+
+const User = mongoose.model('User', userSchema);
+
+const doc = new User({ name: 'Val', picture: '/123.png' });
+doc.picture; // 'https://s3.amazonaws.com/mybucket/123.png'
+doc.toObject({ getters: false }).picture; // '/123.png'
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
