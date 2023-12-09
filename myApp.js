@@ -24,8 +24,8 @@ const cardSchema = new mongoose.Schema({
 const Card = mongoose.model('Card', cardSchema);
 
 const doc = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, superType: '', cardType: ['Sorcery'], type: [''], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.' });
-doc.picture; // 'https://s3.amazonaws.com/mybucket/123.png'
-doc.toObject({ getters: false }).picture; // '/123.png'
+doc.picture;  
+doc.toObject({ getters: false }).picture; 
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
