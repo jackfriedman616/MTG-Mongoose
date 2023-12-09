@@ -38,9 +38,14 @@ const createAndSaveCard = (done) => {
   });
 };
 
-const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
-};
+var arrayOfCards = [/*Add cards here tomorrow*/];
+
+var createManyCards = function(arrayOfCards, done) {
+  Card.create(arrayOfCards, function (err, cards) {
+    if (err) return console.log(err);
+    done(null, cards);
+  });
+}
 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
