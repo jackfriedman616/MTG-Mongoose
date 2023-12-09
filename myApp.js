@@ -27,8 +27,15 @@ const doc = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type
 doc.picture;  
 doc.toObject({ getters: false }).picture; 
 
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+const createAndSaveCard = (done) => {
+  var cardBoard = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, superType: '', cardType: ['Sorcery'], type: [''], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.' });
+  doc.picture;  
+  doc.toObject({ getters: false }).picture;
+
+  cardBoard.save(function(err, data) {
+    if (err) return console.error(err);
+    done(null, data);
+  });
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
