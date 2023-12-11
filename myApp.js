@@ -27,22 +27,23 @@ const cardSchema = new mongoose.Schema({
 
 const Card = mongoose.model('Card', cardSchema);
 
-const atraxasFall = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, superType: '', cardType: ['Sorcery'], type: [''], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.', rarity: 'Common', expansion: 'MOM', cardNumber: 176, artist: 'Xavier Ribeiro' });
-atraxasFall.picture;  
-atraxasFall.toObject({ getters: false }).picture; 
+
 
 const createAndSaveCard = (done) => {
-  var cardBoard = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, superType: '', cardType: ['Sorcery'], type: [''], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.' });
-  doc.picture;  
-  doc.toObject({ getters: false }).picture;
+  const atraxasFall = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.', rarity: 'Common', expansion: 'MOM', cardNumber: 176, artist: 'Xavier Ribeiro' });
+  atraxasFall.picture;  
+  atraxasFall.toObject({ getters: false }).picture; 
 
-  cardBoard.save(function(err, data) {
+  atraxasFall.save(function(err, data) {
     if (err) return console.error(err);
     done(null, data);
   });
 };
 
-var arrayOfCards = [/*Add cards here tomorrow*/];
+var arrayOfCards = [
+  {name: 'Abandon the Post', picture: 'multiverseid=534903&type=card', manaCost: '1R', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Up to two target creatures can't block this turn.  Flashback 3R(You may cast this card from your graveyard for its flashback cost. Then exile it.)', rarity: 'Common', cardNumber: 127, artist: 'Zoltan Boros'},
+  {name: 'Abrade', picture: 'multiverseid=540992&type=card', manaCost: '1R', manaValue: 2, }
+];
 
 var createManyCards = function(arrayOfCards, done) {
   Card.create(arrayOfCards, function (err, cards) {
