@@ -18,12 +18,16 @@ const cardSchema = new mongoose.Schema({
   type: [String], //Human, Arcane, Treasure, Aura, etc.
   rulesText: String,
   power: Number,
-  toughness: Number
+  toughness: Number,
+  rarity: String,
+  expansion: String,
+  cardNumber: Number,
+  artist: String
 });
 
 const Card = mongoose.model('Card', cardSchema);
 
-const atraxasFall = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, superType: '', cardType: ['Sorcery'], type: [''], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.' });
+const atraxasFall = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, superType: '', cardType: ['Sorcery'], type: [''], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.', rarity: 'Common', expansion: 'MOM', cardNumber: 176, artist: 'Xavier Ribeiro' });
 atraxasFall.picture;  
 atraxasFall.toObject({ getters: false }).picture; 
 
