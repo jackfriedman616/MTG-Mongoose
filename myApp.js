@@ -41,8 +41,9 @@ const createAndSaveCard = (done) => {
 };
 
 var arrayOfCards = [
-  {name: 'Abandon the Post', picture: 'multiverseid=534903&type=card', manaCost: '1R', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Up to two target creatures can't block this turn.  Flashback 3R(You may cast this card from your graveyard for its flashback cost. Then exile it.)', rarity: 'Common', cardNumber: 127, artist: 'Zoltan Boros'},
-  {name: 'Abrade', picture: 'multiverseid=540992&type=card', manaCost: '1R', manaValue: 2, }
+  {name: 'Abandon the Post', picture: 'multiverseid=534903&type=card', manaCost: '1R', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Up to two target creatures can't block this turn.  Flashback 3R(You may cast this card from your graveyard for its flashback cost. Then exile it.)', rarity: 'Common', expansion: 'MID', cardNumber: 127, artist: 'Zoltan Boros'},
+  {name: 'Abrade', picture: 'multiverseid=540992&type=card', manaCost: '1R', manaValue: 2, cardType: ['Instant'], rulesText: 'Choose One--  *Abrade deals 3 damage to target creature.  *Destroy target artifact.', rarity: 'Common', expansion: 'VOW', cardNumber: 139, artist: 'Dominik Mayer'},
+  {name: 'Abrade', picture: 'multiverseid=636839&type=card', manaCost: '1R', manaValue: 2, cardType: ['Instant'], rulesText: 'Choose One--  *Abrade deals 3 damage to target creature.  *Destroy target artifact.', rarity: 'Common', expansion: 'VOW', cardNumber: 131, artist: 'Bartek Fedyczak'},
 ];
 
 var createManyCards = function(arrayOfCards, done) {
