@@ -21,7 +21,7 @@ const cardSchema = new mongoose.Schema({
   toughness: Number,
   rarity: String,
   expansion: String,
-  cardNumber: Number,
+  cardNum: Number,
   artist: String
 });
 
@@ -30,7 +30,7 @@ const Card = mongoose.model('Card', cardSchema);
 
 
 const createAndSaveCard = (done) => {
-  const atraxasFall = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.', rarity: 'Common', expansion: 'MOM', cardNumber: 176, artist: 'Xavier Ribeiro' });
+  const atraxasFall = new Card({ name: 'Atraxa's Fall', picture: 'multiverseid=607224&type=card', manaCost: '1G', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Destroy target artifact, battle, enchantment, or creature with flying.', rarity: 'Common', expansion: 'MOM', cardNum: 176, artist: 'Xavier Ribeiro' });
   atraxasFall.picture;  
   atraxasFall.toObject({ getters: false }).picture; 
 
@@ -41,12 +41,13 @@ const createAndSaveCard = (done) => {
 };
 
 var arrayOfCards = [
-  {name: 'Abandon the Post', picture: 'multiverseid=534903&type=card', manaCost: '1R', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Up to two target creatures can't block this turn.  Flashback 3R(You may cast this card from your graveyard for its flashback cost. Then exile it.)', rarity: 'Common', expansion: 'MID', cardNumber: 127, artist: 'Zoltan Boros'},
-  {name: 'Abrade', picture: 'multiverseid=540992&type=card', manaCost: '1R', manaValue: 2, cardType: ['Instant'], rulesText: 'Choose One--  *Abrade deals 3 damage to target creature.  *Destroy target artifact.', rarity: 'Common', expansion: 'VOW', cardNumber: 139, artist: 'Dominik Mayer'},
-  {name: 'Abrade', picture: 'multiverseid=636839&type=card', manaCost: '1R', manaValue: 2, cardType: ['Instant'], rulesText: 'Choose One--  *Abrade deals 3 damage to target creature.  *Destroy target artifact.', rarity: 'Common', expansion: 'LCI', cardNumber: 131, artist: 'Bartek Fedyczak'},
-  {name: 'Abuelo, Ancestral Echo', picture: 'multiverseid=636939&type=card', manaCost: '1WU', manaValue: 3, superType: ['Legendary'], cardType: ['Creature'], type: ['Spirit'], rulesText: 'Flying, Ward 2  1WU: Exile another target creature or artifact you control. Return it under its owner's control at the beginning of the next end step.', power: 2, toughness: 2, rarity: 'Rare', expansion: 'LCI', cardNumber: 219, artist: 'Victor Adame Minguez'},
-  {name: 'Abuelo, Ancestral Echo', picture: 'type=card&multiverseid=636505', manaCost: '1WU', manaValue: 3, superType: ['Legendary'], cardType: ['Creature'], type: ['Spirit'], rulesText: 'Flying, Ward 2  1WU: Exile another target creature or artifact you control. Return it under its owner's control at the beginning of the next end step.', power: 2, toughness: 2, rarity: 'Rare', expansion: 'LCI', cardNumber: 297, artist: 'Cabrol'},
-    
+  {name: 'Abandon the Post', picture: 'multiverseid=534903&type=card', manaCost: '1R', manaValue: 2, cardType: ['Sorcery'], rulesText: 'Up to two target creatures can't block this turn.  Flashback 3R(You may cast this card from your graveyard for its flashback cost. Then exile it.)', rarity: 'Common', expansion: 'MID', cardNum: 127, artist: 'Zoltan Boros'},
+  {name: 'Abrade', picture: 'multiverseid=540992&type=card', manaCost: '1R', manaValue: 2, cardType: ['Instant'], rulesText: 'Choose One--  *Abrade deals 3 damage to target creature.  *Destroy target artifact.', rarity: 'Common', expansion: 'VOW', cardNum: 139, artist: 'Dominik Mayer'},
+  {name: 'Abrade', picture: 'multiverseid=636839&type=card', manaCost: '1R', manaValue: 2, cardType: ['Instant'], rulesText: 'Choose One--  *Abrade deals 3 damage to target creature.  *Destroy target artifact.', rarity: 'Common', expansion: 'LCI', cardNum: 131, artist: 'Bartek Fedyczak'},
+  {name: 'Abuelo, Ancestral Echo', picture: 'multiverseid=636939&type=card', manaCost: '1WU', manaValue: 3, superType: ['Legendary'], cardType: ['Creature'], type: ['Spirit'], rulesText: 'Flying, Ward 2  1WU: Exile another target creature or artifact you control. Return it under its owner's control at the beginning of the next end step.', power: 2, toughness: 2, rarity: 'Rare', expansion: 'LCI', cardNum: 219, artist: 'Victor Adame Minguez'},
+  {name: 'Abuelo, Ancestral Echo', picture: 'type=card&multiverseid=636505', manaCost: '1WU', manaValue: 3, superType: ['Legendary'], cardType: ['Creature'], type: ['Spirit'], rulesText: 'Flying, Ward 2  1WU: Exile another target creature or artifact you control. Return it under its owner's control at the beginning of the next end step.', power: 2, toughness: 2, rarity: 'Rare', expansion: 'LCI', cardNum: 297, artist: 'Cabrol'},
+  {name: 'Abuelo's Awakening', picture: 'type=card&multiverseid=636691', manaCost: 'X3W', manaValue: 4, cardType: ['Sorcery'], rulesText: 'Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.', rarity: 'Rare', expansion: 'LCI', cardNum: 001, artist: 'Eelis Kyttanen'},
+  {name: 'Abuelo's Awakening', picture: 'type=card&multiverseid=639750', manaCost: 'X3W', manaValue: 4, cardType: ['Sorcery'], rulesText: 'Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.', rarity: 'Rare', expansion: 'LCI', cardNum: 353, artist: 'Eelis Kyttanen'},
 ];
 
 var createManyCards = function(arrayOfCards, done) {
