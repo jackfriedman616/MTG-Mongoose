@@ -22,7 +22,8 @@ const cardSchema = new mongoose.Schema({
   rarity: String,
   expansion: String,
   cardNum: Number,
-  artist: String
+  artist: String,
+  
 });
 
 const Card = mongoose.model('Card', cardSchema);
@@ -49,8 +50,9 @@ var arrayOfCards = [
   {name: 'Abuelo's Awakening', picture: 'type=card&multiverseid=636691', manaCost: 'X3W', manaValue: 4, cardType: ['Sorcery'], rulesText: 'Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.', rarity: 'Rare', expansion: 'LCI', cardNum: 001, artist: 'Eelis Kyttanen'},
   {name: 'Abuelo's Awakening', picture: 'type=card&multiverseid=639750', manaCost: 'X3W', manaValue: 4, cardType: ['Sorcery'], rulesText: 'Return target artifact or non-Aura enchantment card from your graveyard to the battlefield with X additional +1/+1 counters on it. It's a 1/1 Spirit creature with flying in addition to its other types.', rarity: 'Rare', expansion: 'LCI', cardNum: 353, artist: 'Eelis Kyttanen'},
   {name: 'Abyssal Gorestalker', picture: 'multiverseid=636790&type=card'}, manaCost: '4BB', manaValue: 6, cardType: ['Creature'], type: ['Horror'], rulesText: 'When Abyssal Gorestalker enters the battlefield, each player sacrifices two creatures.', power: 6, toughness: 6, rarity: 'Uncommon', expansion: 'LCI', cardNum: 087, artist: 'Maxime Minard'},
-  {name: 'Academy Loremaster', picture: 'multiverseid=574520&type=card', manaCost: 'UU', manaValue: 2, cardType: ['Creature'], type: ['Human Wizard'], rulesText: 'At the beginning of each player's draw step, that player may draw an additional card. If they do, spells they cast this turn cost 2 more to cast.', power: 2, toughness 3, rarity: 'Rare', expansion: 'DMU', cardNum: 040, artist: 'Marcela Medeiros'},
-  {name: 'Academy Loremaster', picture: 'type=card&multiverseid=577506', manaCost: 'UU', manaValue: 2, cardType: ['Creature'], type: ['Human Wizard'], rulesText: 'At the beginning of each player's draw step, that player may draw an additional card. If they do, spells they cast this turn cost 2 more to cast.', power: 2, toughness 3, rarity: 'Rare', expansion: 'DMU', cardNum: 391, artist: 'Marcela Medeiros'},
+  {name: 'Academy Loremaster', picture: 'multiverseid=574520&type=card', manaCost: 'UU', manaValue: 2, cardType: ['Creature'], type: ['Human Wizard'], rulesText: 'At the beginning of each player's draw step, that player may draw an additional card. If they do, spells they cast this turn cost 2 more to cast.', power: 2, toughness: 3, rarity: 'Rare', expansion: 'DMU', cardNum: 040, artist: 'Marcela Medeiros'},
+  {name: 'Academy Loremaster', picture: 'type=card&multiverseid=577506', manaCost: 'UU', manaValue: 2, cardType: ['Creature'], type: ['Human Wizard'], rulesText: 'At the beginning of each player's draw step, that player may draw an additional card. If they do, spells they cast this turn cost 2 more to cast.', power: 2, toughness: 3, rarity: 'Rare', expansion: 'DMU', cardNum: 391, artist: 'Marcela Medeiros'},
+  {name: 'Academy Wall', picture: 'multiverseid=574521&type=card', manaCost: '2U', manaValue: 3, cardType: ['Creature'], type: ['Wall'], rulesText: 'Defender  Whenever you cast an instant or sorcery spell, you may draw a card. If you do, discard a card. This ability triggers only once each turn.', power: 0, toughness: 5, rarity: 'Common', expansion: 'DMU', cardNum: 041, artist: 'Adam Paquette'},
 ];
 
 var createManyCards = function(arrayOfCards, done) {
