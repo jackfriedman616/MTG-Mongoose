@@ -23,11 +23,29 @@ const cardSchema = new mongoose.Schema({
   expansion: String,
   cardNum: Number,
   artist: String,
-  
+  backSide: {
+    name: String,
+    picture: {
+      type: String,
+      get: v => `${root}${v}`
+    },
+    manaCost: String,
+    manaValue: Number,
+    superType: [String],
+    cardType: [String], //artifact, creature, instant, etc.
+    type: [String], //Human, Arcane, Treasure, Aura, etc.
+    rulesText: String,
+    power: Number,
+    toughness: Number,
+    rarity: String,
+    expansion: String,
+    cardNum: Number,
+    artist: String
+  }
 });
 
 const Card = mongoose.model('Card', cardSchema);
-
+const 
 
 
 const createAndSaveCard = (done) => {
