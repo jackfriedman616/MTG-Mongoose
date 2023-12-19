@@ -115,47 +115,64 @@ var createManyCards = function(arrayOfCards, done) {
     if (err) return console.log(err);
     done(null, cards);
   });
-}
-
-const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
 };
 
-const findOneByFood = (food, done) => {
-  done(null /*, data*/);
+const findCardsByName = (cardName, done) => {
+  Card.find({name: cardName}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
 };
 
-const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+const findCardsByMV = (mV, done) => {
+  Card.find({manaValue: mV}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
 };
 
-const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";
-
-  done(null /*, data*/);
+const findCardsByMC = (mC, done) => {
+  Card.find({manaCost: mC}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
 };
 
-const findAndUpdate = (personName, done) => {
-  const ageToSet = 20;
-
-  done(null /*, data*/);
+const findCardsBySuper = (sT, done) => {
+  Card.find({superType: sT}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
 };
 
-const removeById = (personId, done) => {
-  done(null /*, data*/);
+const findCardsByCT = (cT, done) => {
+  Card.find({cardType: cT}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
 };
 
-const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
-
-  done(null /*, data*/);
+const findCardsByType = (Type, done) => {
+  Card.find({type: Type}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
 };
 
+const findCardsByRarity = (rare, done) => {
+  Card.find({rarity: rare}, function(err, cardFound) {
+    if (err) return console.log(err);
+    done(null, cardFound);
+  });
+};
+
+/*
 const queryChain = (done) => {
   const foodToSearch = "burrito";
 
   done(null /*, data*/);
-};
+}; 
+*/
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
